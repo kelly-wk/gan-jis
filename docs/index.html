@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#6657A8">
+  <meta name="description" content="A research prototype that audits constrained generative modeling and repairs an ineffective geometry-constraint loss.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="JIS寸法制約付き鋼断面候補の生成 / JIS-Dimension-Constrained Steel-Section Candidate Generation">
+  <meta property="og:description" content="A research prototype that audits constrained generative modeling and repairs an ineffective geometry-constraint loss.">
+  <meta property="og:url" content="https://kelly-wk.github.io/gan-jis/">
+  <meta property="og:image" content="https://kelly-wk.github.io/gan-jis/social-preview.svg">
+  <title>JIS寸法制約付き鋼断面候補の生成 / JIS-Dimension-Constrained Steel-Section Candidate Generation</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="tier-public_case_study" style="--accent:#6657A8;--accent-dark:#252A32;--accent-soft:#ECE9F7;--hero-start:#252A32">
+  <a class="skip-link" href="#content">本文へ / Skip to content</a>
+  <header class="project-hero">
+    <div class="hero-inner">
+      <div class="hero-topline">
+        <div class="eyebrow">
+          <span>AI・機械学習 / AI &amp; Machine Learning</span>
+        </div>
+        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
+      </div>
+      <h1><span lang="ja">JIS寸法制約付き鋼断面候補の生成</span><span lang="en">JIS-Dimension-Constrained Steel-Section Candidate Generation</span></h1>
+      <div class="hero-summary">
+        <div class="copy-pair lede"><p lang="ja">制約付き生成モデルの実装と評価設計を監査し、無効だった制約損失を修復した研究プロトタイプ。</p><p class="translation" lang="en">A research prototype that audits constrained generative modeling and repairs an ineffective geometry-constraint loss.</p></div>
+        <div class="hero-facts">
+          <dl class="project-meta">
+            <div><dt>状態 / Status</dt><dd><span lang="ja">方法修復済み・公開は監査要約のみ</span><span lang="en">Method repaired · public audit summary only</span></dd></div>
+            <div><dt>言語 / Language</dt><dd>Python</dd></div>
+          </dl>
+        </div>
+      </div>
+      <div class="method-block">
+        <p class="method-label">技術スタック / Tech Stack</p>
+        <ul class="method-list" aria-label="Methods"><li>PyTorch</li><li>Conditional WGAN-GP</li><li>Constraint-aware loss</li><li>Paired multi-seed evaluation</li><li>Gradient testing</li></ul>
+      </div>
+    </div>
+  </header>
+
+  <main id="content" class="shell">
+    
+    <section aria-labelledby="highlights-title">
+      <div class="section-heading"><p>01</p><h2 id="highlights-title">主なポイント <span lang="en">Highlights</span></h2></div>
+      <div class="highlight-grid"><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">1</span>
+          <div class="copy-pair"><p lang="ja">CP932を明示した入力処理により、文字コード依存の再現性問題を解消。</p><p class="translation" lang="en">Made input handling reproducible by explicitly supporting CP932 encoding.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">2</span>
+          <div class="copy-pair"><p lang="ja">恒等的にゼロとなっていたJIS制約損失を修正し、勾配テストを追加。</p><p class="translation" lang="en">Corrected a JIS constraint loss that had been identically zero and added gradient tests.</p></div>
+        </article><article class="highlight">
+          <span class="highlight-number" aria-hidden="true">3</span>
+          <div class="copy-pair"><p lang="ja">非確証的な評価結果も保持し、生成候補を構造安全性の証明として扱わない境界を明記。</p><p class="translation" lang="en">Retained the non-confirmatory evaluation outcome and explicitly ruled out structural-safety interpretation.</p></div>
+        </article></div>
+    </section>
+
+    <section aria-labelledby="flow-title">
+      <div class="section-heading"><p>02</p><h2 id="flow-title">研究の流れ <span lang="en">Research Flow</span></h2></div>
+      <ol class="flow-grid"><li class="flow-card" data-step="1">
+              <h3><span lang="ja">課題</span><span lang="en">Problem</span></h3>
+              <div class="copy-pair"><p lang="ja">鋼断面候補の生成で、寸法制約が学習へ実際に作用しているかを検証する。</p><p class="translation" lang="en">Determine whether dimensional constraints genuinely influence training when generating steel-section candidates.</p></div>
+            </li><li class="flow-card" data-step="2">
+              <h3><span lang="ja">方法</span><span lang="en">Method</span></h3>
+              <div class="copy-pair"><p lang="ja">条件付きWGAN-GP、制約損失、複数シードの対応比較、勾配テストを組み合わせる。</p><p class="translation" lang="en">Combine a conditional WGAN-GP, constraint-aware loss, paired multi-seed comparisons, and gradient tests.</p></div>
+            </li><li class="flow-card" data-step="3">
+              <h3><span lang="ja">検証</span><span lang="en">Validation</span></h3>
+              <div class="copy-pair"><p lang="ja">文字コード処理と損失勾配を監査し、修復前後を対応のある設計で確認する。</p><p class="translation" lang="en">Audit encoding and loss gradients, then compare pre- and post-repair behavior with a paired design.</p></div>
+            </li><li class="flow-card" data-step="4">
+              <h3><span lang="ja">成果</span><span lang="en">Outcome</span></h3>
+              <div class="copy-pair"><p lang="ja">実装上の欠陥は修復したが、性能改善を確証せず研究プロトタイプとして限定的に位置付ける。</p><p class="translation" lang="en">The implementation defect was repaired, but improvement was not confirmed; the work remains a bounded research prototype.</p></div>
+            </li></ol>
+    </section>
+
+    <section class="limitations" aria-labelledby="limits-title">
+      <div class="section-heading"><p>03</p><h2 id="limits-title">限界と適用範囲 <span lang="en">Limitations &amp; Scope</span></h2></div>
+      <ul><li><div class="copy-pair"><p lang="ja">元データ、生成物、共同作業物の再配布権が未確定であり、候補の構造性能も検証していない。</p><p class="translation" lang="en">Redistribution rights for source data, generated artifacts, and collaborative materials remain unresolved, and structural performance is unverified.</p></div></li></ul>
+    </section>
+
+    <section class="publication" aria-labelledby="publication-title">
+      <div class="section-heading"><p>04</p><h2 id="publication-title">公開範囲 <span lang="en">Publication Boundary</span></h2></div>
+      <div class="publication-panel">
+        <p class="tier-badge"><span lang="ja">公開ケーススタディ</span><span lang="en">Public case study</span></p>
+        <div class="copy-pair"><p lang="ja">公開ページは方法監査と修復内容の要約のみ。元データ、コード、生成物、数値結果は非公開で、構造安全性や規格適合性の根拠を提供しない。</p><p class="translation" lang="en">The public page is limited to a method-audit and repair summary. Source data, code, generated artifacts, and numeric results remain private, and no structural-safety or standards-compliance evidence is provided.</p></div>
+      </div>
+      <div class="cta-grid"><a class="cta" href="https://github.com/kelly-wk/gan-jis"><strong lang="ja">リポジトリ</strong><span lang="en">Repository</span><span aria-hidden="true">↗</span></a><a class="cta" href="https://github.com/kelly-wk/gan-jis/blob/main/CASE_STUDY.md"><strong lang="ja">レポート</strong><span lang="en">Report</span><span aria-hidden="true">↗</span></a><span class="cta is-disabled" aria-disabled="true"><strong lang="ja">再現手順</strong><span lang="en">Reproduce</span><small>この公開レベルでは利用できません / Not available at this publication tier</small></span></div>
+    </section>
+  </main>
+
+  <footer>
+    <p><span lang="ja">公開レベルはページ上で常に明示されます。</span> <span lang="en">Publication tier is always shown explicitly.</span></p>
+    <p>kelly-wk · gan-jis</p>
+  </footer>
+</body>
+</html>
