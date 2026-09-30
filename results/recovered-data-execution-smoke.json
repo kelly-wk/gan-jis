@@ -1,0 +1,25 @@
+{
+  "profile": "corrected-recovered-data-training",
+  "seed": 2025,
+  "device": "cpu",
+  "epochs": 2,
+  "batch_size": 64,
+  "hidden": 16,
+  "n_critic": 1,
+  "samples": 287,
+  "history": [
+    {
+      "epoch": 1,
+      "critic_loss": 8.13371524810791,
+      "generator_loss": -0.0990509882569313,
+      "exact_jis_loss": 0.016223601624369623
+    },
+    {
+      "epoch": 2,
+      "critic_loss": 7.992797088623047,
+      "generator_loss": -0.10597546398639679,
+      "exact_jis_loss": 0.01624091640114784
+    }
+  ],
+  "scope_warning": "A short run verifies execution only; it does not validate thesis performance claims. Private data and tables are not included."
+}

@@ -1,0 +1,21 @@
+{
+  "profile": "recovered-private-checkpoint-verification",
+  "checkpoint_sha256": "827a0b5702b1a9bb4d6d69be83a27bae797550f6dd25ae37f581b493599f50c5",
+  "seed": 2025,
+  "test_conditions": 106,
+  "candidates_per_condition": 32,
+  "deployable_selection": {
+    "rule": "minimum raw-mm complete-tuple projection distance; target-independent",
+    "top1_raw_tuple_l2_mean": 137.35482788085938,
+    "best_of_k_raw_tuple_l2_mean": 90.6296615600586,
+    "top1_raw_tuple_rms_mean": 24.281129837036133,
+    "best_of_k_raw_tuple_rms_mean": 16.021211624145508
+  },
+  "oracle_diagnostic": {
+    "fresh_best_of_k_normalized_l1_mean": 0.05494780093431473,
+    "stored_best_of_k_normalized_l1_mean": 0.05423329770565033,
+    "warning": "uses hidden target X and cannot be selected at inference"
+  },
+  "security": "checkpoint loaded with weights_only=True; NPZ object ids were not loaded",
+  "scope": "execution verification only; this does not validate thesis performance claims"
+}

@@ -1,0 +1,28 @@
+{
+  "profile": "algorithmic-smoke-test",
+  "seed": 2025,
+  "reference_tables": "synthetic illustration; not official JIS data",
+  "conditions": 12,
+  "projection_distance_before_mean": 0.3896156847476959,
+  "projection_distance_after_mean": 0.0,
+  "projected_compliance_rate": 1.0,
+  "projection_idempotent": true,
+  "best_of_k": {
+    "1": 0.3896156847476959,
+    "2": 0.35137152671813965,
+    "4": 0.3028203547000885,
+    "8": 0.21226026117801666,
+    "16": 0.035011034458875656
+  },
+  "selection_audit": {
+    "conditions": 12,
+    "candidates_per_condition": 16,
+    "selection_rule": "minimum complete-tuple projection distance; target-independent",
+    "raw_pre_projection_combo_compliance_rate_all_candidates": 0.0,
+    "raw_pre_projection_combo_compliance_rate_selected": 0.0,
+    "post_projection_combo_compliance_rate_selected": 1.0,
+    "deployable_selected_projection_distance_mean": 0.035011034458875656
+  },
+  "legal_loss": 0.0,
+  "legal_gradient_max_abs": 0.0
+}
